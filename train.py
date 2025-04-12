@@ -285,7 +285,7 @@ def train(modelConfig: Dict):
     device = torch.device(modelConfig["device"])
 
 
-    mydata = TrainVelocityMulFrameSynthesisDataset(modelConfig, velpath=velpath, denpath=denpath, use_train=True,scenenum=1,
+    mydata = TrainVelocityMulFrameSynthesisDataset(modelConfig, velpath=velpath, denpath=denpath, use_train=True,scenenum=81,
                                            imagetransform=transforms.Compose([
                                                # transforms.ToTensor(),
                                                transforms.Resize(modelConfig["img_size"]),
@@ -293,7 +293,7 @@ def train(modelConfig: Dict):
 
     dataloader = DataLoader(mydata, batch_size=modelConfig["batch_size"], shuffle=True)
 
-    valdata = TrainVelocityMulFrameSynthesisDataset(modelConfig, velpath=velpath, denpath=denpath, use_train=False,scenenum=1,
+    valdata = TrainVelocityMulFrameSynthesisDataset(modelConfig, velpath=velpath, denpath=denpath, use_train=False,scenenum=19,
                                                     imagetransform=transforms.Compose([
                                                         # transforms.ToTensor(),
                                                         transforms.Resize(modelConfig["img_size"]),
